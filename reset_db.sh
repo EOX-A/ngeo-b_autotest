@@ -47,11 +47,24 @@ service httpd stop
 su postgres -c "dropdb ngeo_browse_server_db"
 rm -f /var/ngeob_autotest/data/mapcache.sqlite
 su postgres -c "createdb -O ngeo_user -T template_postgis ngeo_browse_server_db"
+
+python -c "
+from lxml import etree
+mapcache_xml_filename = '/var/www/cache/mapcache.xml'
+root = etree.parse(mapcache_xml_filename).getroot()
+for e in root.xpath('cache|source|tileset'):
+    root.remove(e)
+with open(mapcache_xml_filename, 'w') as f:
+    f.write(etree.tostring(root, pretty_print=True))
+"
+
 cd /var/ngeob_autotest/
 python manage.py syncdb --noinput
 python manage.py syncdb --database=mapcache --noinput
-python manage.py loaddata auth_data.json ngeo_browse_layer.json eoxs_dataset_series.json initial_rangetypes.json
-python manage.py loaddata --database=mapcache ngeo_mapcache.json
+python manage.py loaddata auth_data.json initial_rangetypes.json
+#python manage.py loaddata --database=mapcache ngeo_mapcache.json
+
+python manage.py ngeo_browse_layer --add data/layer_management/defaultLayers.xml
 
 ## Reset DB with Django:
 ## Note, schema changes are not applied.
@@ -69,7 +82,6 @@ touch /var/ngeob_autotest/logs/eoxserver.log /var/ngeob_autotest/logs/ngeo.log
 
 # Reset MapCache
 rm -f /var/www/cache/TEST_SAR.sqlite /var/www/cache/TEST_OPTICAL.sqlite /var/www/cache/TEST_ASA_WSM.sqlite /var/www/cache/TEST_MER_FRS.sqlite /var/www/cache/TEST_MER_FRS_FULL.sqlite /var/www/cache/TEST_MER_FRS_FULL_NO_BANDS.sqlite /var/www/cache/TEST_GOOGLE_MERCATOR.sqlite
-touch /var/www/cache/TEST_SAR.sqlite /var/www/cache/TEST_OPTICAL.sqlite /var/www/cache/TEST_ASA_WSM.sqlite /var/www/cache/TEST_MER_FRS.sqlite /var/www/cache/TEST_MER_FRS_FULL.sqlite /var/www/cache/TEST_MER_FRS_FULL_NO_BANDS.sqlite /var/www/cache/TEST_GOOGLE_MERCATOR.sqlite
 
 # Upload test data
 cp /var/ngeob_autotest/data/reference_test_data/*.jpg /var/www/store/
