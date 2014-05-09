@@ -199,6 +199,9 @@ LOGGING = {
         },
         'verbose': {
             'format': '[%(asctime)s][%(module)s] %(levelname)s: %(message)s'
+        },
+        'ingest': {
+            'format': '%(message)s'
         }
     },
     'handlers': {
@@ -219,6 +222,13 @@ LOGGING = {
         'controller_server_notification': {
             'level': 'WARNING',
             'class': 'ngeo_browse_server.control.control.notification.NotifyControllerServerHandler',
+        },
+        'ngEO-ingest': {
+            'level': 'INFO',
+            'class': 'logging.handlers.WatchedFileHandler',
+            'filename': join(PROJECT_DIR, 'logs', 'ingest.log'),
+            'formatter': 'ingest',
+            'filters': [],
         }
     },
     'loggers': {
@@ -230,6 +240,12 @@ LOGGING = {
         'ngeo_browse_server': {
             'handlers': ['ngeo_file', 'controller_server_notification'],
             'level': 'DEBUG' if DEBUG else 'INFO',
+            'propagate': False,
+        },
+        # for ingest reports
+        'ngEO-ingest': {
+            'handlers': ['ngEO-ingest'],
+            'level': 'INFO',
             'propagate': False,
         },
     }
