@@ -15,6 +15,9 @@
 # ngEO-B
 /logs/debug.log
 /logs/ngeo.log
+/logs/ingest.log
+/logs/httpd_access.log
+/logs/httpd_error.log
 /results
 /data/failure/
 /data/optimized/
