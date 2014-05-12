@@ -62,17 +62,13 @@ cd /var/ngeob_autotest/
 python manage.py syncdb --noinput
 python manage.py syncdb --database=mapcache --noinput
 python manage.py loaddata auth_data.json initial_rangetypes.json
-#python manage.py loaddata --database=mapcache ngeo_mapcache.json
-
-python manage.py ngeo_browse_layer --add data/layer_management/defaultLayers.xml
 
 ## Reset DB with Django:
 ## Note, schema changes are not applied.
 #cd /var/ngeob_autotest/
 #python manage.py flush
 #python manage.py flush --database=mapcache
-#python manage.py loaddata auth_data.json ngeo_browse_layer.json eoxs_dataset_series.json initial_rangetypes.json
-#python manage.py loaddata --database=mapcache ngeo_mapcache.json
+#python manage.py loaddata auth_data.json initial_rangetypes.json
 
 # Reset ngEO Browse Server
 rm -rf /var/ngeob_autotest/data/optimized/ /var/ngeob_autotest/data/success/ /var/ngeob_autotest/data/failure/ /var/www/store/
@@ -95,3 +91,6 @@ chmod -R a+w /var/ngeob_autotest/
 chmod -R a+w /var/www/
 
 service httpd start
+
+# Add browse layers for testing
+curl -d @data/layer_management/synchronizeConfiguration_defaultLayers.xml http://localhost/browse/config
