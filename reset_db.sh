@@ -93,4 +93,6 @@ chmod -R a+w /var/www/
 service httpd start
 
 # Add browse layers for testing
-curl -d @data/layer_management/synchronizeConfiguration_defaultLayers.xml http://localhost/browse/config
+python manage.py ngeo_browse_layer data/layer_management/synchronizeConfiguration_defaultLayers.xml
+#alternative method
+#curl -d @data/layer_management/synchronizeConfiguration_defaultLayers.xml http://localhost/browse/config
