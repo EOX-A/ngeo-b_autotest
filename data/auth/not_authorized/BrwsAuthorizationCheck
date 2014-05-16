@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ws:BrwsAuthorizationCheckResponse xsi:schemaLocation="http://ngeo.eo.esa.int/schema/webserver ngEO-EICD-WS.xsd" xmlns:ws="http://ngeo.eo.esa.int/schema/webserver" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ws:ResponseCode>NOT_AUTHORIZED</ws:ResponseCode>
+</ws:BrwsAuthorizationCheckResponse>
