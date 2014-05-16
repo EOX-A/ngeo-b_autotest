@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synchronizeConfiguration xmlns="http://ngeo.eo.esa.int/schema/configurationElements">
+  <startRevision>0</startRevision>
+  <endRevision>2</endRevision>
+  <removeConfiguration />
+  <addConfiguration>
+    <browseLayers>
+      <browseLayer browseLayerId="ESA.EECF.ERS_SAR_xS">
+        <browseType>SAR_IM0_BP</browseType>
+        <title>ESA.EECF.ERS_SAR_xS</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>OPEN</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <highestMapLevel>8</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2011</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+      <browseLayer browseLayerId="ESA.EECF.ERS_SAR_xSM">
+        <browseType>SAR_IMM_BP</browseType>
+        <title>ESA.EECF.ERS_SAR_xSMM</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>OPEN</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <highestMapLevel>8</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2011</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+    </browseLayers>
+  </addConfiguration>
+</synchronizeConfiguration>
