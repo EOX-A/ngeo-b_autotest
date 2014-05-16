@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synchronizeConfiguration xmlns="http://ngeo.eo.esa.int/schema/configurationElements">
+  <startRevision>0</startRevision>
+  <endRevision>2</endRevision>
+  <removeConfiguration />
+  <addConfiguration>
+    <browseLayers>
+      <browseLayer browseLayerId="TEST_SAR">
+        <browseType>SAR</browseType>
+        <title>TESTTITLE_SAR</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <highestMapLevel>4</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+      <browseLayer browseLayerId="TEST_OPTICAL">
+        <browseType>OPTICAL</browseType>
+        <title>TESTTITLE_OPTICAL</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <highestMapLevel>4</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+      <browseLayer browseLayerId="TEST_ASA_WSM">
+        <browseType>ASA_WSM</browseType>
+        <title>TESTTITLE_ASA_WSM</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <rgbBands>1,1,1</rgbBands>
+        <radiometricInterval>
+          <min>0</min>
+          <max>6000</max>
+        </radiometricInterval>
+        <highestMapLevel>4</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+      <browseLayer browseLayerId="TEST_MER_FRS">
+        <browseType>MER_FRS</browseType>
+        <title>TESTTITLE_MER_FRS</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <highestMapLevel>6</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+      <browseLayer browseLayerId="TEST_MER_FRS_FULL">
+        <browseType>MER_FRS_FULL</browseType>
+        <title>TESTTITLE_MER_FRS_FULL</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <rgbBands>2,4,6</rgbBands>
+        <highestMapLevel>6</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+      <browseLayer browseLayerId="TEST_MER_FRS_FULL_NO_BANDS">
+        <browseType>MER_FRS_FULL_NO_BANDS</browseType>
+        <title>TESTTITLE_MER_FRS_FULL_NO_BANDS</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <highestMapLevel>6</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+      <browseLayer browseLayerId="TEST_GOOGLE_MERCATOR">
+        <browseType>GOOGLE_MERCATOR</browseType>
+        <title>TESTTITLE_GOOGLE_MERCATOR</title>
+        <description></description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible</grid>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <highestMapLevel>6</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+    </browseLayers>
+  </addConfiguration>
+</synchronizeConfiguration>
