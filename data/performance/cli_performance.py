@@ -30,23 +30,23 @@ import argparse
 import os
 from os.path import join
 from datetime import datetime
+from itertools import izip
+from time import time
+from lxml import etree
 
 
 #class to allow easier timing of method calls
 class Timer:    
     def __enter__(self):
-        self.start = time.time()
+        self.start = time()
         return self
 
     def __exit__(self, *args):
-        self.end = time.time()
+        self.end = time()
         self.interval = self.end - self.start
 
 
 def iterate_browses(csv_path, basepath):
-    if basepath:
-        csv_path = join(basepath, csv_path)
-
     ns = {"rep": "http://ngeo.eo.esa.int/schema/browseReport"}
     with open(csv_path) as f:
         reader = csv.reader(f)
@@ -57,9 +57,9 @@ def iterate_browses(csv_path, basepath):
                 report_filename = join(basepath, report_filename)
 
             tree = etree.parse(report_filename)
-            browse_type = tree.xpath("/rep:browseType/text()", namespaces=ns)[0]
-            starts = tree.xpath("/rep:browse/rep:startTime/text()", namespaces=ns)
-            ends = tree.xpath("/rep:browse/rep:endTime/text()", namespaces=ns)
+            browse_type = tree.xpath("rep:browseType/text()", namespaces=ns)[0]
+            starts = tree.xpath("rep:browse/rep:startTime/text()", namespaces=ns)
+            ends = tree.xpath("rep:browse/rep:endTime/text()", namespaces=ns)
             for start, end in izip(starts, ends):
                 yield report_filename, browse_type, start, end
 
@@ -71,7 +71,7 @@ def execute(command, out_writer=None):
         code = os.system(command)
 
     if out_writer:
-        out_writer.write_row(command, "%.09f" % timer.interval, str(code))
+        out_writer.writerow((command, "%.09f" % timer.interval, str(code)))
 
     return timer.interval, code
 
@@ -152,14 +152,14 @@ if __name__ == "__main__":
         help="Optional. Specify the location of the browse. Used for ingest."
     )
     parser.add_argument(
-        'input_csv', nargs=1, dest="browse_report_csv_path"
+        'input_csv', nargs=1,
         help='The input csv file that references the browse reports to be tested.'
     )
 
     args = parser.parse_args()
 
     now = datetime.now().isoformat("T")
-    csv_path = args.browse_report_csv_path[0]
+    csv_path = args.input_csv[0]
     report_dir = args.report_dir
     browse_dir = args.browse_dir
     export_dir = args.export_dir
