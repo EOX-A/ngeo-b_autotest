@@ -36,7 +36,26 @@ python manage.py ngeo_ingest_browse_report <PATH-TO-BROWSE-REPORT>
 
 
 ########################################################################
-# How to generate test data package                                    #
+# How to test authorization                                            #
+########################################################################
+
+# Set <template> of <auth_method> in /var/www/cache/mapcache.xml to
+<template>/usr/bin/python /usr/bin/request_authorization.py -b http://127.0.0.1:8000/authorized -u :user -l :tileset</template>
+# or:
+<template>/usr/bin/python /usr/bin/request_authorization.py -b http://127.0.0.1:8000/not_authorized -u :user -l :tileset</template>
+
+cd /var/ngeob_autotest/
+python manage.py ngeo_browse_layer data/auth/protectedLayers.xml
+
+cd /var/ngeob_autotest/data/auth/
+python -m SimpleHTTPServer
+
+# Send test request from host and check result as well as log output of SimpleHTTPServer
+curl -o out -H "SP-Person-Identifier:test" "http://localhost:3080/c/wmts/?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=TEST_SAR&STYLE=default&TILEMATRIXSET=WGS84&TILEMATRIX=0&TILEROW=0&TILECOL=0&FORMAT=image%2Fpng"
+
+
+########################################################################
+# How to generate test data package (on host machine)                  #
 ########################################################################
 
 cd ngeo-b_autotest/data/
@@ -52,7 +71,7 @@ xmllint --noout --schema schemas/IF-ngEO-BrowseReport-1.1.xsd tmp_report.xml
 
 
 ########################################################################
-# How to run JMeter tests                                              #
+# How to run JMeter tests (on host machine)                            #
 ########################################################################
 
 # Get test data (browse reports and browse images)
