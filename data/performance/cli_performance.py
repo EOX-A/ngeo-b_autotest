@@ -110,9 +110,11 @@ def import_(import_dir, out_writer):
         execute(command, out_writer)
             
 
-def get_writer(command, time):
-    f = open("%s_%s.csv" % (command, time), "w")
-    return csv.writer(f)
+def get_writer(command, time, result_dir):
+    filename = "%s_%s.csv" % (command, time)
+    if result_dir:
+        filename = join(result_dir, filename)
+    return csv.writer(open(filename, "w"))
 
 
 if __name__ == "__main__":
@@ -152,6 +154,10 @@ if __name__ == "__main__":
         help="Optional. Specify the location of the browse. Used for ingest."
     )
     parser.add_argument(
+        '--result-dir', default=None,
+        help="Optional. Specify the location to store the results."
+    )
+    parser.add_argument(
         'input_csv', nargs=1,
         help='The input csv file that references the browse reports to be tested.'
     )
@@ -163,15 +169,16 @@ if __name__ == "__main__":
     report_dir = args.report_dir
     browse_dir = args.browse_dir
     export_dir = args.export_dir
+    result_dir = args.result_dir
 
     if args.ingest or args.all:
-        ingest(iterate_browses(csv_path, report_dir), get_writer("ingest", now), browse_dir)
+        ingest(iterate_browses(csv_path, report_dir), get_writer("ingest", now, result_dir), browse_dir)
 
     if args.export or args.all:
-        export(iterate_browses(csv_path, report_dir), get_writer("export", now), export_dir)
+        export(iterate_browses(csv_path, report_dir), get_writer("export", now, result_dir), export_dir)
 
     if args.delete or args.all:
-        delete(iterate_browses(csv_path, report_dir), get_writer("delete", now))
+        delete(iterate_browses(csv_path, report_dir), get_writer("delete", now, result_dir))
 
     if args.import_ or args.all:
-        import_(export_dir, get_writer("import", now))
+        import_(export_dir, get_writer("import", now, result_dir))

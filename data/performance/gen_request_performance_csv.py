@@ -65,10 +65,10 @@ def iterate_browses(csv_path, reportpath):
 
 
 request_template = (
-    '"/c/wmts/?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=%s'
+    '/c/wmts/?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=%s'
     '&STYLE=default&TILEMATRIXSET=WGS84&FORMAT=image/png'
     '&TileMatrix=%d&TileRow=%d&TileCol=%d'
-    '&time=%s/%s"'
+    '&time=%s/%s'
 )
 
 
