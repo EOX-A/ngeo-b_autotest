@@ -33,7 +33,7 @@ from datetime import datetime
 from itertools import izip
 from time import time
 from lxml import etree
-
+from glob import glob
 
 #class to allow easier timing of method calls
 class Timer:    
@@ -87,7 +87,10 @@ def ingest(iterator, out_writer, browse_dir):
 
 def export(iterator, out_writer, export_path):
     for _, browse_type, start, end in iterator:
-        out_filename = join(export_path, "%s_%s_%s.tar.gz" % (browse_type, start, end))
+        out_filename = join(
+            export_path, "%s_%s_%s.tar.gz" 
+            % (browse_type, start.replace(":", ""), end.replace(":", ""))
+        )
         command = (
             "python ../../manage.py ngeo_export --browse-type %s --start %s --end %s --output %s " 
             % (browse_type, start, end, out_filename)
@@ -98,7 +101,7 @@ def export(iterator, out_writer, export_path):
 def delete(iterator, out_writer):
     for _, browse_type, start, end in iterator:
         command = (
-            "python ../../manage.py ngeo_delete --browse_type %s --start %s --end %s " 
+            "python ../../manage.py ngeo_delete --browse-type %s --start %s --end %s" 
             % (browse_type, start, end)
         )
         execute(command, out_writer)
@@ -111,7 +114,7 @@ def import_(import_dir, out_writer):
             
 
 def get_writer(command, time, result_dir):
-    filename = "%s_%s.csv" % (command, time)
+    filename = "%s_%s.csv" % (command, time.replace(":", ""))
     if result_dir:
         filename = join(result_dir, filename)
     return csv.writer(open(filename, "w"))
