@@ -98,7 +98,7 @@
       <browseLayer browseLayerId="TEST_GOOGLE_MERCATOR">
         <browseType>GOOGLE_MERCATOR</browseType>
         <title>TESTTITLE_GOOGLE_MERCATOR</title>
-        <description></description>
+        <description>TESTDESCRIPTION_GOOGLE_MERCATOR</description>
         <grid>urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible</grid>
         <browseAccessPolicy>OPEN</browseAccessPolicy>
         <hostingBrowseServerName/>
