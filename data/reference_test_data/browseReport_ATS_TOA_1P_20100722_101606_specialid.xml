@@ -4,7 +4,7 @@
     <rep:dateTime>2012-10-02T09:30:00Z</rep:dateTime>
     <rep:browseType>OPTICAL</rep:browseType>
     <rep:browse>
-        <rep:browseIdentifier>some:special:id</rep:browseIdentifier>
+        <rep:browseIdentifier>#some:#special:id</rep:browseIdentifier>
         <rep:fileName>ATS_TOA_1P_20100722_101606.jpg</rep:fileName>
         <rep:imageType>Jpeg</rep:imageType>
         <rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
