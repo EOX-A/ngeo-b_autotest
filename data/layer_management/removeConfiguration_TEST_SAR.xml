@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<synchronizeConfiguration xmlns="http://ngeo.eo.esa.int/schema/configurationElements">
+  <startRevision>0</startRevision>
+  <endRevision>1</endRevision>
+  <addConfiguration />
+  <removeConfiguration>
+    <browseLayers>
+      <browseLayer browseLayerId="TEST_SAR">
+        <browseType>SAR</browseType>
+        <title>TEST_SAR</title>
+        <description>TEST_SAR Browse Layer</description>
+        <browseAccessPolicy>OPEN</browseAccessPolicy>
+        <hostingBrowseServerName>browse_GMV</hostingBrowseServerName>
+        <relatedDatasetIds>
+          <datasetId>ENVISAT_ASA_WS__0P</datasetId>
+        </relatedDatasetIds>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <rgbBands>1,2,3</rgbBands>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleMapsCompatible</grid>
+        <radiometricInterval>
+          <min>0</min>
+          <max>6</max>
+        </radiometricInterval>
+        <highestMapLevel>6</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <tileQueryLimit>100</tileQueryLimit>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+      </browseLayer>
+    </browseLayers>
+  </removeConfiguration>
+</synchronizeConfiguration>
