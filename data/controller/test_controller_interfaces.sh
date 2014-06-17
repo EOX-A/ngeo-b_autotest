@@ -45,8 +45,8 @@ url=$1
 echo "Using Browse Server at '$url'.\n"
 
 echo "Register:"
-curl -d @register/register.json "$url"/browse/controllerServer
-curl -d @register/register_failure.json "$url"/browse/controllerServer
+curl -d @register/register.json "$url"/browse/controllerServer; echo ""
+curl -d @register/register_failure.json "$url"/browse/controllerServer; echo "\n"
 
 echo "Retrieving and setting status in valid order:"
 curl "$url"/browse/status; echo ""
@@ -82,7 +82,7 @@ echo "Configuring browse layers"
 curl -d @../layer_management/synchronizeConfiguration_defaultLayers.xml "$url"/browse/config; echo ""
 curl -d @../layer_management/removeConfiguration_TEST_SAR.xml "$url"/browse/config; echo ""
 curl -d @../layer_management/synchronizeConfiguration_defaultLayers.xml "$url"/browse/config; echo ""
-curl -d @../layer_management/testing_relatedDatasetIds.xml "$url"/browse/config; echo ""
+curl -d @../layer_management/testing_relatedDatasetIds.xml "$url"/browse/config; echo "\n"
 
 echo "Unregistering:"
-curl -d @register/unregister.json "$url"/browse/controllerServer
+curl -X DELETE -d @register/unregister.json "$url"/browse/controllerServer; echo "\n"
