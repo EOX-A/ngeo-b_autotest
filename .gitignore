@@ -22,5 +22,6 @@
 /data/failure/
 /data/optimized/
 /data/success/
+/data/results
 /conf/status.conf
 /conf/controller
