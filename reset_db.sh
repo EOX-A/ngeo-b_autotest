@@ -96,3 +96,6 @@ service httpd start
 python manage.py ngeo_browse_layer data/layer_management/synchronizeConfiguration_defaultLayers.xml
 #alternative method
 #curl -d @data/layer_management/synchronizeConfiguration_defaultLayers.xml http://localhost/browse/config
+
+# Make MapCache reread the configuration
+service httpd restart

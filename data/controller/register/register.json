@@ -1,0 +1,5 @@
+{
+    "controllerServerId": "cs1-id",
+    "instanceId": "autotest",
+    "instanceType": "BrowseServer"
+}

@@ -7,13 +7,13 @@
 		<rep:browseIdentifier>b_id_3</rep:browseIdentifier>
 		<rep:fileName>merge_3_replace.jpg</rep:fileName>
 		<rep:imageType>Jpeg</rep:imageType>
-		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:footprint nodeNumber="5">
 			<rep:colRowList>0 0 494 0 494 861 0 861 0 0</rep:colRowList>
 			<rep:coordList>51.8 2.45 51.58 3.99 49.89 3.36 50.1 1.87 51.8 2.45</rep:coordList>
 		</rep:footprint>
 		<!-- right before br_merge_1.xml -->
 		<rep:startTime>2010-07-22T21:36:40Z</rep:startTime>
-		<rep:endTime>2010-07-22T21:38:40Z</rep:endTime>
+		<rep:endTime>2010-07-22T21:38:41Z</rep:endTime>
 	</rep:browse>
 </rep:browseReport>

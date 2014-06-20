@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<synchronizeConfiguration xmlns="http://ngeo.eo.esa.int/schema/configurationElements">
+    <startRevision>39</startRevision>
+    <endRevision>40</endRevision>
+    <addConfiguration>
+        <browseLayers>
+            <browseLayer browseLayerId="TEST_OPTICAL">
+                <browseType>OPTICAL</browseType>
+                <title>TEST_OPTICAL</title>
+                <wmsType>WMTS</wmsType>
+                <description>TEST_OPTICAL description</description>
+                <browseAccessPolicy>OPEN</browseAccessPolicy>
+                <hostingBrowseServerName>browse_GMV</hostingBrowseServerName>
+                <relatedDatasetIds>
+                    <datasetId>ENVISAT_ASA_WS_ACS</datasetId>
+                </relatedDatasetIds>
+                <containsVerticalCurtains>false</containsVerticalCurtains>
+                <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+                <highestMapLevel>4</highestMapLevel>
+                <lowestMapLevel>0</lowestMapLevel>
+                </browseLayer>
+            <browseLayer browseLayerId="TEST_SAR">
+            <browseType>SAR</browseType>
+                <title>TEST_SAR</title>
+                <wmsType>WMTS</wmsType>
+                <description>TEST_SAR description</description>
+                <browseAccessPolicy>OPEN</browseAccessPolicy>
+                <hostingBrowseServerName>browse_GMV</hostingBrowseServerName>
+                <relatedDatasetIds>
+                    <datasetId>ENVISAT_ASA_WS_ACS</datasetId>
+                    <datasetId>ENVISAT_ASA_GM1_1P</datasetId>
+                    <datasetId>ENVISAT_ASA_IM__0P</datasetId>
+                    <datasetId>ENVISAT_ASA_WS__0P</datasetId>
+                    <datasetId>ENVISAT_ATS_TOA_1P</datasetId>
+                </relatedDatasetIds>
+                <containsVerticalCurtains>false</containsVerticalCurtains>
+                <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+                <highestMapLevel>4</highestMapLevel>
+                <lowestMapLevel>0</lowestMapLevel>
+            </browseLayer>
+        </browseLayers>
+    </addConfiguration>
+</synchronizeConfiguration>
