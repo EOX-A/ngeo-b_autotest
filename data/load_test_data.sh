@@ -68,7 +68,15 @@ if [ "$2" ] ; then
     curl --digest -u test:eiNoo7ae -T aiv_test_data/NGEO-FEED-VTC-0040.jpg "$url"/store/
 
     curl --digest -u test:eiNoo7ae -T feed_test_data/quick-look.png "$url"/store/
+
+    # replace/merge tests
+    curl --digest -u test:eiNoo7ae -T input_merge_test_data/to_be_replaced.jpg "$url"/store/
+    curl --digest -u test:eiNoo7ae -T input_merge_test_data/replacing.jpg "$url"/store/
+
+    curl --digest -u test:eiNoo7ae -T input_merge_test_data/to_be_merged.jpg "$url"/store/
+    curl --digest -u test:eiNoo7ae -T input_merge_test_data/merging.jpg "$url"/store/
 fi
+
 
 echo "Sending browse reports to: $url"
 
@@ -96,3 +104,10 @@ curl --digest -u test:eiNoo7ae -T test_data/MER_FRS_1PNPDE20060816_090929_000001
 curl -d @test_data/MER_FRS_1PNPDE20060816_090929_000001972050_00222_23322_0058_uint16_reduced_compressed.xml "$url"/browse/ingest
 curl --digest -u test:eiNoo7ae -T test_data/MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced.tif "$url"/store/
 curl -d @test_data/MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced_GOOGLE_MERCATOR.xml "$url"/browse/ingest
+
+# replace/merge tests
+curl -d @input_merge_test_data/to_be_replaced.xml "$url"/browse/ingest
+curl -d @input_merge_test_data/replacing.xml "$url"/browse/ingest
+
+curl -d @input_merge_test_data/to_be_merged.xml "$url"/browse/ingest
+curl -d @input_merge_test_data/merging.xml "$url"/browse/ingest
