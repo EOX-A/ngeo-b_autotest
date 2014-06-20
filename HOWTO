@@ -59,7 +59,7 @@ curl -o out -H "SP-Person-Identifier:test" "http://localhost:3080/c/wmts/?SERVIC
 ########################################################################
 
 cd ngeo-b_autotest/data/
-git archive --format=tar --prefix=ngeo_browse_server_test_data_20140516/ master | gzip > ngeo_browse_server_test_data_20140516.tar.gz
+git archive --format=tar master | gzip > ngeo_browse_server_test_data_20140516.tar.gz
 
 
 ########################################################################
