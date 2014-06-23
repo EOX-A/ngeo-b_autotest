@@ -85,6 +85,7 @@ cp /var/ngeob_autotest/data/test_data/*.tif /var/www/store/
 cp /var/ngeob_autotest/data/test_data/*.jpg /var/www/store/
 cp /var/ngeob_autotest/data/feed_test_data/*.png /var/www/store/
 cp /var/ngeob_autotest/data/aiv_test_data/*.jpg /var/www/store/
+cp /var/ngeob_autotest/data/input_merge_test_data/*.jpg /var/www/store/
 
 # Make the instance read- and editable by apache
 chmod -R a+w /var/ngeob_autotest/
