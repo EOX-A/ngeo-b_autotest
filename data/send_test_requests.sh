@@ -51,7 +51,7 @@ echo "Sending test requests to: $url"
 echo "WMTS GetCapabilities"
 curl -s "$url/c/wmts/1.0.0/WMTSCapabilities.xml" -o results/WMTSCapabilities.xml
 
-echo "WMTS GetTile: Zoom in"
+echo "WMTS GetTile: Zoom in on one time interval"
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/WMTS_TEST_SAR_0_0_0.png
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/1/0/1.png" -o results/WMTS_TEST_SAR_1_0_1.png
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/2/0/3.png" -o results/WMTS_TEST_SAR_2_0_3.png
@@ -65,18 +65,55 @@ curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-25T10:22:31Z/WGS84/4/3/15.pn
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T21:38:40Z/WGS84/4/3/15.png" -o results/WMTS_TEST_SAR_4_3_15_2.png
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z/WGS84/4/3/15.png" -o results/WMTS_TEST_SAR_4_3_15_3.png
 
+echo "WMTS GetTile: Test merging in MapCache seeding of overlapping time intervals"
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-08-07T10:13:27Z/WGS84/4/3/16.png" -o results/WMTS_TEST_SAR_seed_merge.png # Should show image with number 2 on top of a real image
+
+echo "WMTS GetTile: Test merging/replacing of input images"
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-09-07T10:13:27Z/WGS84/2/1/4.png" -o results/WMTS_TEST_SAR_input_merge.png # Should show image with number 2 on top of image with number 1
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-08-07T10:13:27Z/WGS84/5/6/32.png" -o results/WMTS_TEST_SAR_input_replace.png # Should show image with number 2 and no image with number 1
+
 echo "WMS GetCapabilities"
-curl -s "$url/c?service=wms&request=GetCapabilities" -o results/WMS_Capabilities_111.xml
+curl -s "$url/c?service=wms&version=1.0.0&request=GetCapabilities" -o results/WMS_Capabilities_100.xml
+curl -s "$url/c?service=wms&version=1.1.1&request=GetCapabilities" -o results/WMS_Capabilities_111.xml
 curl -s "$url/c?service=wms&version=1.3.0&request=GetCapabilities" -o results/WMS_Capabilities_130.xml
+curl -s "$url/c?service=wms&request=GetCapabilities" -o results/WMS_Capabilities_130_highest_1.xml
+curl -s "$url/c?service=wms&version=2&request=GetCapabilities" -o results/WMS_Capabilities_130_highest_2.xml
 
 echo "WMS GetMap: Zoom in"
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=-90,-180,90,180&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2000/2014" -o results/WMS_TEST_SAR_0.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=0,-10,90,170&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2000/2014" -o results/WMS_TEST_SAR_1.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=30,-10,75,80&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2000/2014" -o results/WMS_TEST_SAR_2.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=40,-10,62.5,35&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2000/2014" -o results/WMS_TEST_SAR_3.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2000/2014" -o results/WMS_TEST_SAR_4.png
 
 echo "WMS GetMap: Same map different times"
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2010-07-25T10:22:31Z" -o results/WMS_TEST_SAR_4_1.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2010-07-22T21:38:40Z" -o results/WMS_TEST_SAR_4_2.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2010-07-22T10:16:01Z" -o results/WMS_TEST_SAR_4_3.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2010-08-07T10:13:27Z" -o results/WMS_TEST_SAR_4_4.png
 
-echo "WMS GetMap: Different formats"
-echo "WMS GetMap: Different projections"
+echo "WMS GetMap: Different versions"
+curl -s "$url/c?service=wms&version=1.1.1&request=GetMap&bbox=-10,45,12.5,56.25&width=800&height=400&srs=EPSG:4326&layers=TEST_SAR&time=2000/2014" -o results/WMS_TEST_SAR_4_111.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2000/2014" -o results/WMS_TEST_SAR_4_130.png
 
-echo "Invalid requests"
+echo "WMS GetMap: Different projections & formats"
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=-1000000,5500000,1000000,7500000&width=800&height=800&crs=EPSG:3857&layers=TEST_SAR&format=image/png&transparent=true" -o results/WMS_TEST_SAR_4_EPSG3857.png
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=-1000000,5500000,1000000,7500000&width=800&height=800&crs=EPSG:3857&layers=TEST_SAR&format=image/jpeg&transparent=true" -o results/WMS_TEST_SAR_4_EPSG3857.jpg
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=-1000000,5500000,1000000,7500000&width=800&height=800&crs=EPSG:3857&layers=TEST_SAR&format=image/tiff&transparent=true" -o results/WMS_TEST_SAR_4_EPSG3857.tiff
 
-echo "Images with overlapping time are merged in MapCache during seeding"
-echo "Input images are merged"
+echo "Sending some invalid requests"
+curl -s "$url/c/INVALID/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_service.txt
+
+echo "Invalid WMTS requests"
+curl -s "$url/c/wmts/INVALID/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_version.txt
+curl -s "$url/c/wmts/1.0.0/INVALID/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_layer.txt
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/INVALID/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_style.txt
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/INVALID/WGS84/0/0/0.png" -o results/exception_wmts_invalid_time.txt
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/INVALID/0/0/0.png" -o results/exception_wmts_invalid_tilematrixset.txt
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/INVALID/0/0.png" -o results/exception_wmts_invalid_tilematrix.txt
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/INVALID/0.png" -o results/exception_wmts_invalid_tilerow.txt
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/INVALID.png" -o results/exception_wmts_invalid_tilecol.txt
+
+echo "Invalid WMS requests"
+curl -s "$url/c?service=wms&version=INVALID&request=GetCapabilities" -o results/exception_wms_invalid_version.xml
+curl -s "$url/c?service=wms&version=1.3.0&request=INVALID" -o results/exception_wms_invalid_request.xml
