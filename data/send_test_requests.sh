@@ -52,15 +52,15 @@ echo "WMTS GetCapabilities"
 curl -s "$url/c/wmts/1.0.0/WMTSCapabilities.xml" -o results/WMTSCapabilities.xml
 
 echo "WMTS GetTile: Zoom in"
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010/WGS84/0/0/0.png" -o results/WMTS_TEST_SAR_0_0_0.png
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010/WGS84/1/0/1.png" -o results/WMTS_TEST_SAR_1_0_1.png
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010/WGS84/2/0/3.png" -o results/WMTS_TEST_SAR_2_0_3.png
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010/WGS84/3/1/7.png" -o results/WMTS_TEST_SAR_3_1_7.png
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010/WGS84/4/3/15.png" -o results/WMTS_TEST_SAR_4_3_15.png
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010/WGS84/5/7/31.png" -o results/WMTS_TEST_SAR_5_7_31.png
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010/WGS84/6/14/63.png" -o results/WMTS_TEST_SAR_6_14_63.jpg
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/WMTS_TEST_SAR_0_0_0.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/1/0/1.png" -o results/WMTS_TEST_SAR_1_0_1.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/2/0/3.png" -o results/WMTS_TEST_SAR_2_0_3.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/3/1/7.png" -o results/WMTS_TEST_SAR_3_1_7.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/4/3/15.png" -o results/WMTS_TEST_SAR_4_3_15.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/5/7/31.png" -o results/WMTS_TEST_SAR_5_7_31.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/6/14/63.png" -o results/WMTS_TEST_SAR_6_14_63.jpg
 
-echo "WMTS GetTile: Same tile different times"
+echo "WMTS GetTile: Same tile different times to test merging in MapCache responses"
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-25T10:22:31Z/WGS84/4/3/15.png" -o results/WMTS_TEST_SAR_4_3_15_1.png
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T21:38:40Z/WGS84/4/3/15.png" -o results/WMTS_TEST_SAR_4_3_15_2.png
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z/WGS84/4/3/15.png" -o results/WMTS_TEST_SAR_4_3_15_3.png
@@ -77,3 +77,6 @@ echo "WMS GetMap: Different formats"
 echo "WMS GetMap: Different projections"
 
 echo "Invalid requests"
+
+echo "Images with overlapping time are merged in MapCache during seeding"
+echo "Input images are merged"
