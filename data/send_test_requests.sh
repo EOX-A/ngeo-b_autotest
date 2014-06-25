@@ -72,6 +72,12 @@ echo "WMTS GetTile: Test merging/replacing of input images"
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-09-07T10:13:27Z/WGS84/2/1/4.png" -o results/WMTS_TEST_SAR_input_merge.png # Should show image with number 2 on top of image with number 1
 curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-08-07T10:13:27Z/WGS84/5/6/32.png" -o results/WMTS_TEST_SAR_input_replace.png # Should show image with number 2 and no image with number 1
 
+echo "WMTS GetTile: Different layers"
+curl -s "$url/c/wmts/1.0.0/TEST_OPTICAL/default/2000--2014/WGS84/2/0/4.png" -o results/WMTS_TEST_OPTICAL.png
+curl -s "$url/c/wmts/1.0.0/TEST_ASA_WSM/default/2000--2014/WGS84/2/2/4.png" -o results/WMTS_TEST_ASA_WSM.png
+curl -s "$url/c/wmts/1.0.0/TEST_MER_FRS/default/2000--2014/WGS84/2/1/4.png" -o results/WMTS_TEST_MER_FRS.png
+curl -s "$url/c/wmts/1.0.0/TEST_GOOGLE_MERCATOR/default/2000--2014/GoogleMapsCompatible/2/1/2.png" -o results/WMTS_GOOGLE_MERCATOR.png
+
 echo "WMS GetCapabilities"
 curl -s "$url/c?service=wms&version=1.0.0&request=GetCapabilities" -o results/WMS_Capabilities_100.xml
 curl -s "$url/c?service=wms&version=1.1.1&request=GetCapabilities" -o results/WMS_Capabilities_111.xml
@@ -102,18 +108,24 @@ curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=-1000000,5500000,1
 curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=-1000000,5500000,1000000,7500000&width=800&height=800&crs=EPSG:3857&layers=TEST_SAR&format=image/tiff&transparent=true" -o results/WMS_TEST_SAR_4_EPSG3857.tiff
 
 echo "Sending some invalid requests"
-curl -s "$url/c/INVALID/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_service.txt
+curl -s "$url/c/INVALID/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_service_empty_image.png
 
 echo "Invalid WMTS requests"
-curl -s "$url/c/wmts/INVALID/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_version.txt
-curl -s "$url/c/wmts/1.0.0/INVALID/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_layer.txt
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/INVALID/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_style.txt
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/INVALID/WGS84/0/0/0.png" -o results/exception_wmts_invalid_time.txt
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/INVALID/0/0/0.png" -o results/exception_wmts_invalid_tilematrixset.txt
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/INVALID/0/0.png" -o results/exception_wmts_invalid_tilematrix.txt
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/INVALID/0.png" -o results/exception_wmts_invalid_tilerow.txt
-curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/INVALID.png" -o results/exception_wmts_invalid_tilecol.txt
+curl -s "$url/c/wmts/INVALID/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_version_empty_image.png
+curl -s "$url/c/wmts/1.0.0/INVALID/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_layer_empty_image.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/INVALID/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/0.png" -o results/exception_wmts_invalid_style_empty_image.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/INVALID/WGS84/0/0/0.png" -o results/exception_wmts_invalid_time_empty_image.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/INVALID/0/0/0.png" -o results/exception_wmts_invalid_tilematrixset_empty_image.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/INVALID/0/0.png" -o results/exception_wmts_invalid_tilematrix_empty_image.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/INVALID/0.png" -o results/exception_wmts_invalid_tilerow_empty_image.png
+curl -s "$url/c/wmts/1.0.0/TEST_SAR/default/2010-07-22T10:16:01Z--2012-10-02T09:20:00Z/WGS84/0/0/INVALID.png" -o results/exception_wmts_invalid_tilecol_empty_image.png
 
 echo "Invalid WMS requests"
 curl -s "$url/c?service=wms&version=INVALID&request=GetCapabilities" -o results/exception_wms_invalid_version.xml
 curl -s "$url/c?service=wms&version=1.3.0&request=INVALID" -o results/exception_wms_invalid_request.xml
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=INVALID&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2000-01-01T00:00:00Z/2014-12-31T23:59:59Z&format=image/png" -o results/exception_wms_invalid_bbox.xml
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=INVALID&height=400&crs=EPSG:4326&layers=TEST_SAR&time=2000-01-01T00:00:00Z/2014-12-31T23:59:59Z&format=image/png" -o results/exception_wms_invalid_width.xml
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=INVALID&crs=EPSG:4326&layers=TEST_SAR&time=2000-01-01T00:00:00Z/2014-12-31T23:59:59Z&format=image/png" -o results/exception_wms_invalid_height.xml
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:INVALID&layers=TEST_SAR&time=2000-01-01T00:00:00Z/2014-12-31T23:59:59Z&format=image/png" -o results/exception_wms_invalid_crs.xml
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:4326&layers=INVALID&time=2000-01-01T00:00:00Z/2014-12-31T23:59:59Z&format=image/png" -o results/exception_wms_invalid_layer.xml
+curl -s "$url/c?service=wms&version=1.3.0&request=GetMap&bbox=45,-10,56.25,12.5&width=800&height=400&crs=EPSG:4326&layers=TEST_SAR&time=INVALID&format=image/png" -o results/exception_wms_invalid_time_empty_image.png
