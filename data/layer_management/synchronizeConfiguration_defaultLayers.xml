@@ -18,6 +18,7 @@
         <lowestMapLevel>0</lowestMapLevel>
         <timeDimensionDefault>2010</timeDimensionDefault>
         <tileQueryLimit>100</tileQueryLimit>
+        <strategy>merge</strategy>
       </browseLayer>
       <browseLayer browseLayerId="TEST_OPTICAL">
         <browseType>OPTICAL</browseType>
