@@ -77,7 +77,7 @@ rm -f /var/ngeob_autotest/logs/eoxserver.log /var/ngeob_autotest/logs/ngeo.log
 touch /var/ngeob_autotest/logs/eoxserver.log /var/ngeob_autotest/logs/ngeo.log
 
 # Reset MapCache
-rm -f /var/www/cache/TEST_SAR.sqlite /var/www/cache/TEST_OPTICAL.sqlite /var/www/cache/TEST_ASA_WSM.sqlite /var/www/cache/TEST_MER_FRS.sqlite /var/www/cache/TEST_MER_FRS_FULL.sqlite /var/www/cache/TEST_MER_FRS_FULL_NO_BANDS.sqlite /var/www/cache/TEST_GOOGLE_MERCATOR.sqlite
+rm -f /var/www/cache/SAR.sqlite /var/www/cache/OPTICAL.sqlite /var/www/cache/ASA_WSM.sqlite /var/www/cache/MER_FRS.sqlite /var/www/cache/MER_FRS_FULL.sqlite /var/www/cache/MER_FRS_FULL_NO_BANDS.sqlite /var/www/cache/GOOGLE_MERCATOR.sqlite
 
 # Upload test data
 cp /var/ngeob_autotest/data/reference_test_data/*.jpg /var/www/store/
