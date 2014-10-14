@@ -12,8 +12,8 @@
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-# copies of the Software, and to permit persons to whom the Software is 
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
 # The above copyright notice and this permission notice shall be included in all
@@ -72,7 +72,7 @@ python manage.py loaddata auth_data.json initial_rangetypes.json
 
 # Reset ngEO Browse Server
 rm -rf /var/ngeob_autotest/data/optimized/ /var/ngeob_autotest/data/success/ /var/ngeob_autotest/data/failure/ /var/www/store/
-mkdir /var/ngeob_autotest/data/optimized/ /var/ngeob_autotest/data/success/ /var/ngeob_autotest/data/failure/ /var/www/store/
+mkdir -p /var/ngeob_autotest/data/optimized/ /var/ngeob_autotest/data/success/ /var/ngeob_autotest/data/failure/ /var/www/store/
 rm -f /var/ngeob_autotest/logs/eoxserver.log /var/ngeob_autotest/logs/ngeo.log
 touch /var/ngeob_autotest/logs/eoxserver.log /var/ngeob_autotest/logs/ngeo.log
 
@@ -90,8 +90,6 @@ cp /var/ngeob_autotest/data/input_merge_test_data/*.jpg /var/www/store/
 # Make the instance read- and editable by apache
 chmod -R a+w /var/ngeob_autotest/
 chmod -R a+w /var/www/
-
-service httpd start
 
 # Add browse layers for testing
 python manage.py ngeo_browse_layer data/layer_management/synchronizeConfiguration_defaultLayers.xml
