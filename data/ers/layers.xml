@@ -21,7 +21,7 @@
       </browseLayer>
       <browseLayer browseLayerId="ESA.EECF.ERS_SAR_xSM">
         <browseType>SAR_IMM_BP</browseType>
-        <title>ESA.EECF.ERS_SAR_xSMM</title>
+        <title>ESA.EECF.ERS_SAR_xSM</title>
         <description></description>
         <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
         <browseAccessPolicy>OPEN</browseAccessPolicy>

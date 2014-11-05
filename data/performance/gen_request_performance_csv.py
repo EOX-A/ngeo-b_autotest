@@ -9,8 +9,8 @@
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-# copies of the Software, and to permit persons to whom the Software is 
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
 # The above copyright notice and this permission notice shall be included in all
@@ -53,6 +53,13 @@ def iterate_browses(csv_path, reportpath):
             starts = tree.xpath("rep:browse/rep:startTime/text()", namespaces=ns)
             ends = tree.xpath("rep:browse/rep:endTime/text()", namespaces=ns)
 
+            if browse_type == "SAR_IM0_BP":
+                browse_layer = "ESA.EECF.ERS_SAR_xS"
+            elif browse_type == "SAR_IMM_BP":
+                browse_layer = "ESA.EECF.ERS_SAR_xSM"
+            else:
+                browse_layer = None
+
             footprints = tree.xpath("rep:browse/rep:footprint/rep:coordList/text()", namespaces=ns)
             for start, end, footprint in izip(starts, ends, footprints):
                 #print list(pairwise(map(float, footprint.split(" "))))
@@ -61,7 +68,7 @@ def iterate_browses(csv_path, reportpath):
                     min(x_coords), min(y_coords),
                     max(x_coords), max(y_coords)
                 )
-                yield start, end, extent
+                yield browse_layer, start, end, extent
 
 
 request_template = (
@@ -100,13 +107,15 @@ if __name__ == "__main__":
 
     iterator = iterate_browses(args.input_csv[0], args.report_dir)
     writer = csv.writer(open(args.output_csv[0], "w"))
-    
+
     layer = args.layer
     zooms = range(args.max_zoom)
     resolutions = [180.0 / (2 ** z) for z in zooms]
 
-    for start, end, (minx, miny, maxx, maxy) in iterator:
+    for browse_layer, start, end, (minx, miny, maxx, maxy) in iterator:
 
+        if browse_layer is not None:
+            layer = browse_layer
 
         for z, res in izip(zooms, resolutions):
             # calculate tile extents
@@ -120,5 +129,3 @@ if __name__ == "__main__":
                 writer.writerow(
                     (request_template % (layer, z, y, x, start, end),)
                 )
-
-
