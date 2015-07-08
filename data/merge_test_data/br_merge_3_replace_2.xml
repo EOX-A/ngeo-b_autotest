@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rep:browseReport xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" version="1.1">
+<rep:browseReport xmlns:rep="http://ngeo.eo.esa.int/ngEO/browseReport/1.0" version="1.3">
 	<rep:responsibleOrgName>ESA</rep:responsibleOrgName>
 	<rep:dateTime>2012-10-02T09:30:00Z</rep:dateTime>
 	<rep:browseType>SAR</rep:browseType>
@@ -7,7 +7,7 @@
 		<rep:browseIdentifier>b_id_3</rep:browseIdentifier>
 		<rep:fileName>merge_3_replace.jpg</rep:fileName>
 		<rep:imageType>Jpeg</rep:imageType>
-		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:footprint nodeNumber="5">
 			<rep:colRowList>0 0 494 0 494 861 0 861 0 0</rep:colRowList>
 			<rep:coordList>51.8 2.45 51.58 3.99 49.89 3.36 50.1 1.87 51.8 2.45</rep:coordList>
