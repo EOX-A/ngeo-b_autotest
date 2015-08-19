@@ -79,6 +79,10 @@ if [ "$2" ] ; then
     # regularGrid clipping
     curl --digest -u test:eiNoo7ae -T regular_grid_clipping/ID_quick-look_1.png "$url"/store/
     curl --digest -u test:eiNoo7ae -T regular_grid_clipping/ID_quick-look_2.png "$url"/store/
+
+    # dateline crossing
+    curl --digest -u test:eiNoo7ae -T test_data/_20120101T022322540-20120101T030036350_D_T-AA0B.jpg "$url"/store/
+    curl --digest -u test:eiNoo7ae -T test_data/BrowseReport_crosses_dateline2.png "$url"/store/
 fi
 
 
@@ -119,3 +123,7 @@ curl -d @input_merge_test_data/merging.xml "$url"/browse/ingest
 # regularGrid clipping
 curl -d @regular_grid_clipping/1434370912775_BrowseServerIngest_1434370912587_input.xml "$url"/browse/ingest
 curl -d @regular_grid_clipping/1434370922099_BrowseServerIngest_1434370922061_input.xml "$url"/browse/ingest
+
+# dateline crossing
+curl -d @test_data/BrowseReport_crosses_dateline.xml "$url"/browse/ingest
+curl -d @test_data/BrowseReport_crosses_dateline2.xml "$url"/browse/ingest
