@@ -12,8 +12,8 @@
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-# copies of the Software, and to permit persons to whom the Software is 
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
 # The above copyright notice and this permission notice shall be included in all
@@ -30,7 +30,7 @@
 
 # About:
 # =====
-# This script loads the demo/test data in an ngEO Browse Server instance via 
+# This script loads the demo/test data in an ngEO Browse Server instance via
 # HTTP POST.
 
 # Running:
@@ -60,7 +60,7 @@ if [ "$2" ] ; then
     curl --digest -u test:eiNoo7ae -T reference_test_data/ATS_TOA_1P_20100719_105257.jpg "$url"/store/
     curl --digest -u test:eiNoo7ae -T reference_test_data/ATS_TOA_1P_20100719_213253.jpg "$url"/store/
     curl --digest -u test:eiNoo7ae -T reference_test_data/ATS_TOA_1P_20100722_101606.jpg "$url"/store/
-     
+
     curl --digest -u test:eiNoo7ae -T test_data/ASA_WSM_1PNDPA20050331_075939_000000552036_00035_16121_0775.tif "$url"/store/
     curl --digest -u test:eiNoo7ae -T test_data/MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced_nogeo.tif "$url"/store/
     curl --digest -u test:eiNoo7ae -T test_data/MER_FRS_1PNPDE20060822_092058_000001972050_00308_23408_0077_RGB_reduced.tif "$url"/store/
@@ -75,6 +75,10 @@ if [ "$2" ] ; then
 
     curl --digest -u test:eiNoo7ae -T input_merge_test_data/to_be_merged.jpg "$url"/store/
     curl --digest -u test:eiNoo7ae -T input_merge_test_data/merging.jpg "$url"/store/
+
+    # regularGrid clipping
+    curl --digest -u test:eiNoo7ae -T regular_grid_clipping/ID_quick-look_1.png "$url"/store/
+    curl --digest -u test:eiNoo7ae -T regular_grid_clipping/ID_quick-look_2.png "$url"/store/
 fi
 
 
@@ -111,3 +115,7 @@ curl -d @input_merge_test_data/replacing.xml "$url"/browse/ingest
 
 curl -d @input_merge_test_data/to_be_merged.xml "$url"/browse/ingest
 curl -d @input_merge_test_data/merging.xml "$url"/browse/ingest
+
+# regularGrid clipping
+curl -d @regular_grid_clipping/1434370912775_BrowseServerIngest_1434370912587_input.xml "$url"/browse/ingest
+curl -d @regular_grid_clipping/1434370922099_BrowseServerIngest_1434370922061_input.xml "$url"/browse/ingest
