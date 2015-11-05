@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rep:browseReport xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport"
+                  version="1.1"
+                  xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport ../../../../xsd/browseReport/IF-ngEO-BrowseReport-1.1.xsd">
+   <rep:responsibleOrgName>ESA</rep:responsibleOrgName>
+   <rep:dateTime>2015-06-20T02:28:48</rep:dateTime>
+   <rep:browseType>SAR</rep:browseType>
+   <rep:browse>
+      <rep:browseIdentifier>GS2A_20150620T022848_001418_N01.01</rep:browseIdentifier>
+      <rep:fileName>S2.jp2</rep:fileName>
+      <rep:imageType>Jpeg2000</rep:imageType>
+      <rep:referenceSystemIdentifier>EPSG:32650</rep:referenceSystemIdentifier>
+      <rep:rectifiedBrowse>
+         <rep:coordList>699960.0 3990200.0 809760.0 4100000.0</rep:coordList>
+      </rep:rectifiedBrowse>
+      <rep:startTime>2015-06-20T02:28:48Z</rep:startTime>
+      <rep:endTime>2015-06-20T02:28:48Z</rep:endTime>
+   </rep:browse>
+</rep:browseReport>
