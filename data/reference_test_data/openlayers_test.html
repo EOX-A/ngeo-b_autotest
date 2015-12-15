@@ -18,6 +18,10 @@
         margin: 0px;
         padding: 0px;
     }
+    .olImageLoadError {
+        /* when OL encounters a 404, don't display the pink image */
+        display: none !important;
+    }
     </style>
     <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
     <script type="text/javascript">
@@ -45,6 +49,24 @@
             );
             map.addLayer(terrain_light_WGS84_wmts_layer);
 
+            var terrain_WGS84_wmts_layer = new OpenLayers.Layer.WMTS({
+                name: "EOX::Maps Terrain",
+                url: "http://tiles.maps.eox.at/wmts/",
+                layer: 'terrain',
+                matrixSet: 'WGS84',
+                format: 'image/jpeg',
+                style: 'default',
+                gutter:0,buffer:0,isBaseLayer:true,transitionEffect:'resize',
+                resolutions:[0.70312500000000000000,0.35156250000000000000,0.17578125000000000000,0.08789062500000000000,0.04394531250000000000,0.02197265625000000000,0.01098632812500000000,0.00549316406250000000,0.00274658203125000000,0.00137329101562500000,0.00068664550781250000,0.00034332275390625000,0.00017166137695312500,0.00008583068847656250,0.00004291534423828120,0.00002145767211914060,0.00001072883605957030,0.00000536441802978516],
+                zoomOffset:0,
+                units:"dd",
+                maxExtent: new OpenLayers.Bounds(-180.000000,-90.000000,180.000000,90.000000),
+                projection: new OpenLayers.Projection("EPSG:4326".toUpperCase()),
+                sphericalMercator: false
+              }
+            );
+            map.addLayer(terrain_WGS84_wmts_layer);
+
             var osm_WGS84_wmts_layer = new OpenLayers.Layer.WMTS({
                 name: "EOX::Maps OSM",
                 url: "http://tiles.maps.eox.at/wmts/",
@@ -64,7 +86,7 @@
             map.addLayer(osm_WGS84_wmts_layer);
 
             var ngeo_overlay_sar = new OpenLayers.Layer.WMTS({
-                name: "ngEO WMTS Test Layer",
+                name: "ngEO SAR Test",
                 url: "http://localhost:3080/c/wmts/",
                 layer: 'TEST_SAR',
                 matrixSet: 'WGS84',
@@ -82,8 +104,58 @@
             );
             map.addLayer(ngeo_overlay_sar);
 
+            var ngeo_overlay_s2 = new OpenLayers.Layer.WMTS({
+                name: "ngEO Sentinel-2 Test",
+                url: "http://localhost:3080/c/wmts/",
+                layer: 'S2MSI1C',
+                params: {
+                    "TIME": "2015"
+//                    "TIME": "2015-06-20T02:22:01Z"
+//                    "TIME": "2015-06-20T02:45:12Z"
+//                    "TIME": "2015-06-20T02:45:29Z"
+//                    "TIME": "2015-06-20T02:40:00Z/2015-06-20T02:50:00Z"
+                },
+                matrixSet: 'WGS84',
+                format: 'image/png',
+                style: 'default',
+                gutter:0,buffer:0,isBaseLayer:true,transitionEffect:'resize',
+                resolutions:[0.70312500000000000000,0.35156250000000000000,0.17578125000000000000,0.08789062500000000000,0.04394531250000000000,0.02197265625000000000,0.01098632812500000000,0.00549316406250000000,0.00274658203125000000,0.00137329101562500000,0.00068664550781250000,0.00034332275390625000,0.00017166137695312500,0.00008583068847656250,0.00004291534423828120,0.00002145767211914060,0.00001072883605957030,0.00000536441802978516],
+                zoomOffset:0,
+                units:"dd",
+                maxExtent: new OpenLayers.Bounds(-180.000000,-90.000000,180.000000,90.000000),
+                projection: new OpenLayers.Projection("EPSG:4326".toUpperCase()),
+                sphericalMercator: false,
+                isBaseLayer: false,
+                visibility: false
+              }
+            );
+            map.addLayer(ngeo_overlay_s2);
+
+            var ngeo_overlay_fullres = new OpenLayers.Layer.WMTS({
+                name: "ngEO Full Resolution Test",
+                url: "http://localhost:3080/c/wmts/",
+                layer: 'SL6_22P_1T',
+                params: {
+                    "TIME": "2011"
+                },
+                matrixSet: 'WGS84',
+                format: 'image/png',
+                style: 'default',
+                gutter:0,buffer:0,isBaseLayer:true,transitionEffect:'resize',
+                resolutions:[0.70312500000000000000,0.35156250000000000000,0.17578125000000000000,0.08789062500000000000,0.04394531250000000000,0.02197265625000000000,0.01098632812500000000,0.00549316406250000000,0.00274658203125000000,0.00137329101562500000,0.00068664550781250000,0.00034332275390625000,0.00017166137695312500,0.00008583068847656250,0.00004291534423828120,0.00002145767211914060,0.00001072883605957030,0.00000536441802978516],
+                zoomOffset:0,
+                units:"dd",
+                maxExtent: new OpenLayers.Bounds(-180.000000,-90.000000,180.000000,90.000000),
+                projection: new OpenLayers.Projection("EPSG:4326".toUpperCase()),
+                sphericalMercator: false,
+                isBaseLayer: false,
+                visibility: false
+              }
+            );
+            map.addLayer(ngeo_overlay_fullres);
+
             var ngeo_overlay_ers1 = new OpenLayers.Layer.WMTS({
-                name: "ngEO WMTS Test Layer",
+                name: "ngEO ERS1 Test",
                 url: "http://brow01.ngeo.eox.at/c/wmts/",
                 layer: 'ESA.EECF.ERS_SAR_xS',
                 params: {
@@ -106,7 +178,7 @@
             map.addLayer(ngeo_overlay_ers1);
 
             var ngeo_overlay_ers2 = new OpenLayers.Layer.WMTS({
-                name: "ngEO WMTS Test Layer",
+                name: "ngEO ERS2 Test",
                 url: "http://brow01.ngeo.eox.at/c/wmts/",
                 layer: 'ESA.EECF.ERS_SAR_xSM',
                 params: {
