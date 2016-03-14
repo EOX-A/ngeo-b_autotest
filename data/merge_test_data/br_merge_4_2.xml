@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rep:browseReport xmlns:rep="http://ngeo.eo.esa.int/ngEO/browseReport/1.0" version="1.3">
+	<rep:responsibleOrgName>ESA</rep:responsibleOrgName>
+	<rep:dateTime>2012-10-02T09:30:00Z</rep:dateTime>
+	<rep:browseType>SAR</rep:browseType>
+	<rep:browse>
+		<rep:fileName>merge_2.jpg</rep:fileName>
+		<rep:imageType>Jpeg</rep:imageType>
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
+		<rep:footprint nodeNumber="5">
+			<rep:colRowList>0 0 485 0 485 915 0 915 0 0</rep:colRowList>
+			<rep:coordList>53.47 -1.97 53.25 -0.37 51.45 -1.09 51.67 -2.62 53.47 -1.97</rep:coordList>
+		</rep:footprint>
+		<rep:startTime>2010-07-22T21:38:40Z</rep:startTime>
+		<rep:endTime>2010-07-22T21:39:38Z</rep:endTime>
+	</rep:browse>
+</rep:browseReport>
