@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>ngEO Browse Server WMTS Test Page</title>
+    <style type="text/css">
+    html, body {
+        height: 100%;
+        width: 100%;
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
+    #map {
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        border: 1px solid black;
+        margin: 0px;
+        padding: 0px;
+    }
+    .olImageLoadError {
+        /* when OL encounters a 404, don't display the pink image */
+/*        display: none !important;*/
+    }
+    </style>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript">
+        var map;
+        function init(){
+            map = new OpenLayers.Map( 'map', {
+                displayProjection: new OpenLayers.Projection("EPSG:900913")
+            } );
+
+            var terrain_light_g_wmts_layer = new OpenLayers.Layer.WMTS({
+                name: "EOX::Maps Terrain Light",
+                url: "http://tiles.maps.eox.at/wmts/",
+                layer: 'terrain-light_3857',
+                matrixSet: 'g',
+                format: 'image/jpeg',
+                style: 'default',
+                gutter:0,buffer:0,transitionEffect:'resize',
+                resolutions:[156543.03392804099712520838,78271.51696402048401068896,39135.75848201022745342925,19567.87924100512100267224,9783.93962050256050133612,4891.96981025128025066806,2445.98490512564012533403,1222.99245256282006266702,611.49622628141003133351,305.74811314070478829308,152.87405657035250783338,76.43702828517623970583,38.21851414258812695834,19.10925707129405992646,9.55462853564703173959,4.77731426782351586979,2.38865713391175793490,1.19432856695587897633,0.59716428347793950593],
+                zoomOffset:0,
+                units:"m",
+                maxExtent: new OpenLayers.Bounds(-20037508.342789,-20037508.342789,20037508.342789,20037508.342789),
+                projection: new OpenLayers.Projection("EPSG:900913".toUpperCase()),
+                sphericalMercator: true,
+                tileSize: new OpenLayers.Size(256,256),
+                isBaseLayer:true
+              }
+            );
+            map.addLayer(terrain_light_g_wmts_layer);
+
+            var ngeo_overlay = new OpenLayers.Layer.WMTS({
+                name: "ngEO CDS",
+                url: "http://localhost:3080/c/wmts/",
+                layer: 'MSI_IMG_1B',
+                params: {
+                    "TIME": "2011"
+//                    "TIME": "2015-06-20T02:22:01Z"
+//                    "TIME": "2015-06-20T02:45:12Z"
+//                    "TIME": "2015-06-20T02:45:29Z"
+//                    "TIME": "2015-06-20T02:40:00Z/2015-06-20T02:50:00Z"
+                },
+                matrixSet: 'GoogleMapsCompatible',
+                format: 'image/png',
+                style: 'default',
+                gutter:0,buffer:0,transitionEffect:'resize',
+                resolutions:[156543.03392804099712520838,78271.51696402048401068896,39135.75848201022745342925,19567.87924100512100267224,9783.93962050256050133612,4891.96981025128025066806,2445.98490512564012533403,1222.99245256282006266702,611.49622628141003133351,305.74811314070478829308,152.87405657035250783338,76.43702828517623970583,38.21851414258812695834,19.10925707129405992646,9.55462853564703173959,4.77731426782351586979,2.38865713391175793490,1.19432856695587897633,0.59716428347793950593],
+                zoomOffset:0,
+                units:"m",
+                maxExtent: new OpenLayers.Bounds(-20037508.342789,-20037508.342789,20037508.342789,20037508.342789),
+                projection: new OpenLayers.Projection("EPSG:3857".toUpperCase()),
+                sphericalMercator: true,
+                isBaseLayer: false,
+                visibility: false
+              }
+            );
+            map.addLayer(ngeo_overlay);
+
+            var overlay_base_g_wmts_layer = new OpenLayers.Layer.WMTS({
+                name: "EOX::Maps Overlay Base",
+                url: "http://tiles.maps.eox.at/wmts/",
+                layer: 'overlay_base_3857',
+                matrixSet: 'g',
+                format: 'image/png',
+                style: 'default',
+                gutter:0,buffer:0,transitionEffect:'resize',
+                resolutions:[156543.03392804099712520838,78271.51696402048401068896,39135.75848201022745342925,19567.87924100512100267224,9783.93962050256050133612,4891.96981025128025066806,2445.98490512564012533403,1222.99245256282006266702,611.49622628141003133351,305.74811314070478829308,152.87405657035250783338,76.43702828517623970583,38.21851414258812695834,19.10925707129405992646,9.55462853564703173959,4.77731426782351586979,2.38865713391175793490,1.19432856695587897633,0.59716428347793950593],
+                zoomOffset:0,
+                units:"m",
+                maxExtent: new OpenLayers.Bounds(-20037508.342789,-20037508.342789,20037508.342789,20037508.342789),
+                projection: new OpenLayers.Projection("EPSG:900913".toUpperCase()),
+                sphericalMercator: true,
+                isBaseLayer: false
+              }
+            );
+            map.addLayer(overlay_base_g_wmts_layer);
+
+            if(!map.getCenter())
+                map.zoomToMaxExtent();
+            map.addControl(new OpenLayers.Control.LayerSwitcher());
+            map.addControl(new OpenLayers.Control.MousePosition());
+        }
+    </script>
+  </head>
+
+<body onload="init()">
+    <div id="map">
+    </div>
+</body>
+</html>
