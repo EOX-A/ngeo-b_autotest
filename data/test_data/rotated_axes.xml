@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bsi:ingestBrowse xmlns:bsi="http://ngeo.eo.esa.int/schema/browse/ingestion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xdt="http://www.w3.org/2005/02/xpath-datatypes" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rep="http://ngeo.eo.esa.int/ngEO/browseReport/1.0" version="1.3">
+    <rep:responsibleOrgName xmlns:gsc="http://earth.esa.int/gsc" xmlns:gml="http://www.opengis.net/gml" xmlns:eop="http://earth.esa.int/eop" xmlns:opt="http://earth.esa.int/opt">SpotImage</rep:responsibleOrgName>
+    <rep:dateTime xmlns:gsc="http://earth.esa.int/gsc" xmlns:gml="http://www.opengis.net/gml" xmlns:eop="http://earth.esa.int/eop" xmlns:opt="http://earth.esa.int/opt">2015-07-21T09:46:12Z</rep:dateTime>
+    <rep:browseType xmlns:gsc="http://earth.esa.int/gsc" xmlns:gml="http://www.opengis.net/gml" xmlns:eop="http://earth.esa.int/eop" xmlns:opt="http://earth.esa.int/opt">OPTICAL</rep:browseType>
+    <rep:browse xmlns:gsc="http://earth.esa.int/gsc" xmlns:gml="http://www.opengis.net/gml" xmlns:eop="http://earth.esa.int/eop" xmlns:opt="http://earth.esa.int/opt">
+        <rep:browseIdentifier>ID_urn_eop_PHR_MULTISPECTRAL_0.5m_DS_PHR1B_201506300817486_FR1_PX_E060N66_0402_01276</rep:browseIdentifier>
+        <rep:fileName>rotated_axes.tif</rep:fileName>
+        <rep:imageType>TIFF</rep:imageType>
+        <rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
+        <rep:modelInGeotiff>true</rep:modelInGeotiff>
+        <rep:startTime>2015-06-30T08:17:48Z</rep:startTime>
+        <rep:endTime>2015-06-30T08:17:50Z</rep:endTime>
+    </rep:browse>
+</bsi:ingestBrowse>
