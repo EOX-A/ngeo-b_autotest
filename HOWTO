@@ -40,9 +40,9 @@ python manage.py ngeo_ingest_browse_report <PATH-TO-BROWSE-REPORT>
 ########################################################################
 
 # Set <template> of <auth_method> in /var/www/cache/mapcache.xml to
-<template>/usr/bin/python /usr/bin/request_authorization.py -b http://127.0.0.1:8000/authorized -u :user -l :tileset</template>
+<template>/usr/bin/python /usr/bin/request_authorization.py -b http://127.0.0.1:8000/authorized -u :user -l :tileset -t :time</template>
 # or:
-<template>/usr/bin/python /usr/bin/request_authorization.py -b http://127.0.0.1:8000/not_authorized -u :user -l :tileset</template>
+<template>/usr/bin/python /usr/bin/request_authorization.py -b http://127.0.0.1:8000/not_authorized -u :user -l :tileset -t :time</template>
 
 cd /var/ngeob_autotest/
 python manage.py ngeo_browse_layer data/auth/protectedLayers.xml
