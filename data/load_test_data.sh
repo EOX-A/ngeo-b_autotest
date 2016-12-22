@@ -45,6 +45,11 @@ url=$1
 upload=$2
 
 [ "$1" ] || url="http://localhost:3080"
+#To debug using pdb start development server:
+#cd /var/ngeob_autotest/
+#python manage.py runserver 0.0.0.0:8000
+#and use this url:
+#url="http://localhost:38000"
 
 if [ "$2" ] ; then
     echo "Sending browse images to: $url"
