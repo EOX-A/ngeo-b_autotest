@@ -33,5 +33,10 @@
         "pk": "TEST_GOOGLE_MERCATOR", 
         "model": "mapcache.source", 
         "fields": {}
+    },
+    {
+        "pk": "TEST_NGEO-LIGHT",
+        "model": "mapcache.source",
+        "fields": {}
     }
 ]

@@ -110,6 +110,21 @@
         <timeDimensionDefault>2010</timeDimensionDefault>
         <tileQueryLimit>100</tileQueryLimit>
       </browseLayer>
+      <browseLayer browseLayerId="TEST_NGEO-LIGHT">
+        <browseType>NGEO-LIGHT</browseType>
+        <title>TESTTITLE_NGEO-LIGHT</title>
+        <description>TESTDESCRIPTION_NGEO-LIGHT</description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>OPEN</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <highestMapLevel>8</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2017</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+        <strategy>skip</strategy>
+      </browseLayer>
     </browseLayers>
   </addConfiguration>
 </synchronizeConfiguration>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rep:browseReport version="1.1" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport IF-ngEO-BrowseReport-1.1.xsd" xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <rep:responsibleOrgName>SLAP 03.03</rep:responsibleOrgName>
+        <rep:dateTime>2014-07-24T11:58:24Z</rep:dateTime>
+        <rep:browseType>NGEO-LIGHT</rep:browseType>
+        <rep:browse>
+                <rep:browseIdentifier>LS05_RFUI_TM__GTC_1P_19910928T071939_19910928T072007_040292_0172_0031_B10D</rep:browseIdentifier>
+                <rep:fileName>http://landsat-ds.eo.esa.int/metadata/LandsatTMCloudFreeCoverage/1991/09/28/LS05_RFUI_TM__GTC_1P_19910928T071939_19910928T072007_040292_0172_0031_B10D.BP.PNG</rep:fileName>
+                <rep:imageType>PNG</rep:imageType>
+                <rep:referenceSystemIdentifier>EPSG: 4326</rep:referenceSystemIdentifier>
+                <rep:rectifiedBrowse>
+                        <rep:coordList>40.8395 40.1005 42.6645 42.7907</rep:coordList>
+                </rep:rectifiedBrowse>
+                <rep:startTime>1991-09-28T07:19:39Z</rep:startTime>
+                <rep:endTime>1991-09-28T07:20:07Z</rep:endTime>
+        </rep:browse>
+</rep:browseReport>

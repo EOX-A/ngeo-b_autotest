@@ -1,0 +1,18 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<rep:browseReport version="1.1" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <rep:responsibleOrgName>SxCat</rep:responsibleOrgName>
+    <rep:dateTime>2016-12-16T09:07:42Z</rep:dateTime>
+    <rep:browseType>NGEO-LIGHT</rep:browseType>
+    <rep:browse>
+        <rep:browseIdentifier>SP6_OPER_NAO_P_S_1A_20131009T025600_N15-640_E107-412_0001</rep:browseIdentifier>
+        <rep:fileName>http://tpm-ds.eo.esa.int/oads/meta/SPOT6-7/browse/SP6_OPER_NAO_P_S_1A_20131009T025600_N15-640_E107-412_0001.SIP.ZIP_BID.PNG</rep:fileName>
+        <rep:imageType>PNG</rep:imageType>
+        <rep:referenceSystemIdentifier>EPSG: 4326</rep:referenceSystemIdentifier>
+        <rep:footprint nodeNumber="5">
+            <rep:colRowList>0 0 0 nrow ncol nrow ncol 0 0 0</rep:colRowList>
+            <rep:coordList>15.8869724021 107.214829381 15.3907697227 107.215488243 15.3937444378 107.609145744 15.8906256166 107.610540703 15.8869724021 107.214829381</rep:coordList>
+        </rep:footprint>
+        <rep:startTime>2013-10-09T02:56:00Z</rep:startTime>
+        <rep:endTime>2013-10-09T02:56:27Z</rep:endTime>
+    </rep:browse>
+</rep:browseReport>

@@ -1,0 +1,18 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<rep:browseReport version="1.1" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <rep:responsibleOrgName>SxCat</rep:responsibleOrgName>
+    <rep:dateTime>2016-07-26T07:28:16Z</rep:dateTime>
+    <rep:browseType>NGEO-LIGHT</rep:browseType>
+    <rep:browse>
+        <rep:browseIdentifier>ASA_IMP_1PNESA20030308_091419_000000152014_00265_05329_0000</rep:browseIdentifier>
+        <rep:fileName>http://esar-ds.eo.esa.int/oads/meta/ASA_IMP_1P/browse/ASA_IMP_1PNESA20030308_091419_000000152014_00265_05329_0000.N1_BID.JPG</rep:fileName>
+        <rep:imageType>PNG</rep:imageType>
+        <rep:referenceSystemIdentifier>EPSG: 4326</rep:referenceSystemIdentifier>
+        <rep:footprint nodeNumber="5">
+            <rep:colRowList>0 0 0 nrow ncol nrow ncol 0 0 0</rep:colRowList>
+            <rep:coordList>48.63 16.46 47.74 16.17 47.53 17.59 48.41 17.90 48.63 16.46</rep:coordList>
+        </rep:footprint>
+        <rep:startTime>2003-03-08T09:14:19.861Z</rep:startTime>
+        <rep:endTime>2003-03-08T09:14:34.951Z</rep:endTime>
+    </rep:browse>
+</rep:browseReport>

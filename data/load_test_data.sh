@@ -132,3 +132,10 @@ curl -d @regular_grid_clipping/1434370922099_BrowseServerIngest_1434370922061_in
 # dateline crossing
 curl -d @test_data/BrowseReport_crosses_dateline.xml "$url"/browse/ingest
 curl -d @test_data/BrowseReport_crosses_dateline2.xml "$url"/browse/ingest
+
+# ngEO-Light
+curl -d @ngeo-light/ASA_asc.xml "$url"/browse/ingest
+curl -d @ngeo-light/ASA_desc.xml "$url"/browse/ingest
+curl -d @ngeo-light/from-bbox_SPOT6-7.xml "$url"/browse/ingest
+curl -d @ngeo-light/from-footprint_SPOT6-7.xml "$url"/browse/ingest
+curl -d @ngeo-light/modified-remote_Landsat57.xml "$url"/browse/ingest
