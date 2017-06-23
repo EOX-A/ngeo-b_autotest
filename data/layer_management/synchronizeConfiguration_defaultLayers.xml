@@ -124,6 +124,7 @@
         <timeDimensionDefault>2017</timeDimensionDefault>
         <tileQueryLimit>100</tileQueryLimit>
         <strategy>skip</strategy>
+        <harvestingSource>https://data.eox.at/meta/meris_fr_nowrs/</harvestingSource>
       </browseLayer>
     </browseLayers>
   </addConfiguration>
