@@ -4,15 +4,15 @@
 	<rep:dateTime>2012-10-02T09:30:00Z</rep:dateTime>
 	<rep:browseType>SAR</rep:browseType>
 	<rep:browse>
-		<rep:browseIdentifier>b_id_3</rep:browseIdentifier>
-		<rep:fileName>ASA_IM__0P_20100807_101327.jpg</rep:fileName>
+		<rep:browseIdentifier>b_id_3_1</rep:browseIdentifier>
+		<rep:fileName>ASA_IM__0P_20100807_101327_new.jpg</rep:fileName>
 		<rep:imageType>Jpeg</rep:imageType>
 		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:footprint nodeNumber="5">
-			<rep:colRowList>0 0 494 0 494 861 0 861 0 0</rep:colRowList>
-			<rep:coordList>51.8 2.45 51.58 3.99 49.89 3.36 50.1 1.87 51.8 2.45</rep:coordList>
+			<rep:colRowList>0 0 494 0 494 1147 0 1147 0 0</rep:colRowList>
+			<rep:coordList>52.36 2.65 52.14 4.21 49.89 3.36 50.1 1.87 52.36 2.65</rep:coordList>
 		</rep:footprint>
-		<rep:startTime>2010-08-07T10:13:37Z</rep:startTime>
-		<rep:endTime>2010-08-07T10:14:06Z</rep:endTime>
+		<rep:startTime>2010-08-07T10:13:36Z</rep:startTime>
+		<rep:endTime>2010-08-07T10:13:36Z</rep:endTime>
 	</rep:browse>
 </rep:browseReport>
