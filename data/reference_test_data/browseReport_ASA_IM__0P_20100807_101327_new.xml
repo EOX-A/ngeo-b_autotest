@@ -7,7 +7,7 @@
 		<rep:browseIdentifier>b_id_3</rep:browseIdentifier>
 		<rep:fileName>ASA_IM__0P_20100807_101327_new.jpg</rep:fileName>
 		<rep:imageType>Jpeg</rep:imageType>
-		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:footprint nodeNumber="5">
 			<rep:colRowList>0 0 494 0 494 1147 0 1147 0 0</rep:colRowList>
 			<rep:coordList>52.36 2.65 52.14 4.21 49.89 3.36 50.1 1.87 52.36 2.65</rep:coordList>
