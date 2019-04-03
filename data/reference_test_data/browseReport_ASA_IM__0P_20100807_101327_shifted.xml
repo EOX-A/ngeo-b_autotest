@@ -10,7 +10,7 @@
 		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier>
 		<rep:footprint nodeNumber="5">
 			<rep:colRowList>0 0 485 0 485 915 0 915 0 0</rep:colRowList>
-			<rep:coordList>54.36 2.65 54.14 4.21 51.89 3.36 52.1 1.87 54.36 2.65</rep:coordList>
+			<rep:coordList>62.36 2.65 62.14 4.21 59.89 3.36 60.1 1.87 62.36 2.65</rep:coordList>
 		</rep:footprint>
 		<rep:startTime>2010-08-07T10:13:36Z</rep:startTime>
 		<rep:endTime>2010-08-07T10:13:36Z</rep:endTime>
