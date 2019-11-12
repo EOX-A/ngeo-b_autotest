@@ -14,6 +14,7 @@
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <highestMapLevel>8</highestMapLevel>
         <lowestMapLevel>0</lowestMapLevel>
         <timeDimensionDefault>2011</timeDimensionDefault>

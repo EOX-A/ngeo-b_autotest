@@ -14,6 +14,7 @@
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <highestMapLevel>4</highestMapLevel>
         <lowestMapLevel>0</lowestMapLevel>
         <timeDimensionDefault>2010</timeDimensionDefault>
@@ -28,6 +29,7 @@
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <highestMapLevel>4</highestMapLevel>
         <lowestMapLevel>0</lowestMapLevel>
         <timeDimensionDefault>2010</timeDimensionDefault>
@@ -42,6 +44,7 @@
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <rgbBands>1,1,1</rgbBands>
         <radiometricInterval>
           <min>0</min>
@@ -61,6 +64,7 @@
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <highestMapLevel>6</highestMapLevel>
         <lowestMapLevel>0</lowestMapLevel>
         <timeDimensionDefault>2010</timeDimensionDefault>
@@ -75,6 +79,7 @@
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <rgbBands>2,4,6</rgbBands>
         <highestMapLevel>6</highestMapLevel>
         <lowestMapLevel>0</lowestMapLevel>
@@ -90,6 +95,7 @@
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <highestMapLevel>6</highestMapLevel>
         <lowestMapLevel>0</lowestMapLevel>
         <timeDimensionDefault>2010</timeDimensionDefault>
@@ -104,6 +110,7 @@
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <highestMapLevel>6</highestMapLevel>
         <lowestMapLevel>0</lowestMapLevel>
         <timeDimensionDefault>2010</timeDimensionDefault>
