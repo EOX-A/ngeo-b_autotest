@@ -117,6 +117,36 @@
         <timeDimensionDefault>2010</timeDimensionDefault>
         <tileQueryLimit>100</tileQueryLimit>
       </browseLayer>
+      <browseLayer browseLayerId="TEST_INTERVAL_100">
+        <browseType>TEST_INTERVAL_100</browseType>
+        <title>TESTTITLE_TEST_INTERVAL_100</title>
+        <description>TESTDESCRIPTION_TEST_INTERVAL_100</description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>OPEN</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>100.0</shortenIngestedInterval>
+        <highestMapLevel>6</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
+      <browseLayer browseLayerId="TEST_INTERVAL_30">
+        <browseType>TEST_INTERVAL_30</browseType>
+        <title>TESTTITLE_TEST_INTERVAL_30</title>
+        <description>TESTDESCRIPTION_TEST_INTERVAL_30</description>
+        <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
+        <browseAccessPolicy>OPEN</browseAccessPolicy>
+        <hostingBrowseServerName/>
+        <relatedDatasetIds/>
+        <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>30.0</shortenIngestedInterval>
+        <highestMapLevel>6</highestMapLevel>
+        <lowestMapLevel>0</lowestMapLevel>
+        <timeDimensionDefault>2010</timeDimensionDefault>
+        <tileQueryLimit>100</tileQueryLimit>
+      </browseLayer>
       <browseLayer browseLayerId="TEST_NGEO-LIGHT">
         <browseType>NGEO-LIGHT</browseType>
         <title>TESTTITLE_NGEO-LIGHT</title>
