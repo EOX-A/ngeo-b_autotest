@@ -117,11 +117,11 @@
         <tileQueryLimit>100</tileQueryLimit>
       </browseLayer>
       <browseLayer browseLayerId="TEST_INTERVAL_100">
-        <browseType>TEST_INTERVAL_100</browseType>
+        <browseType>INTERVAL_100</browseType>
         <title>TESTTITLE_TEST_INTERVAL_100</title>
         <description>TESTDESCRIPTION_TEST_INTERVAL_100</description>
         <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
-        <browseAccessPolicy>OPEN</browseAccessPolicy>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
@@ -132,11 +132,11 @@
         <tileQueryLimit>100</tileQueryLimit>
       </browseLayer>
       <browseLayer browseLayerId="TEST_INTERVAL_30">
-        <browseType>TEST_INTERVAL_30</browseType>
+        <browseType>INTERVAL_30</browseType>
         <title>TESTTITLE_TEST_INTERVAL_30</title>
         <description>TESTDESCRIPTION_TEST_INTERVAL_30</description>
         <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
-        <browseAccessPolicy>OPEN</browseAccessPolicy>
+        <browseAccessPolicy>RESTRICTED</browseAccessPolicy>
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
