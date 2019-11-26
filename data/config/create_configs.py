@@ -42,6 +42,7 @@ tmpl = """<?xml version="1.0" encoding="UTF-8"?>
         <hostingBrowseServerName/>
         <relatedDatasetIds/>
         <containsVerticalCurtains>false</containsVerticalCurtains>
+        <shortenIngestedInterval>0.0</shortenIngestedInterval>
         <highestMapLevel>4</highestMapLevel>
         <lowestMapLevel>0</lowestMapLevel>
         <timeDimensionDefault>2010</timeDimensionDefault>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rep:browseReport xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" version="1.1">
+	<rep:responsibleOrgName>ESA</rep:responsibleOrgName>
+	<rep:dateTime>2012-10-02T09:30:00Z</rep:dateTime>
+	<rep:browseType>SAR</rep:browseType>
+	<rep:browse>
+		<rep:browseIdentifier>b_id_shorten_0</rep:browseIdentifier>
+		<rep:fileName>ASA_IM__0P_20100731_103315.jpg</rep:fileName>
+		<rep:imageType>Jpeg</rep:imageType>
+		<rep:referenceSystemIdentifier>EPSG:4326</rep:referenceSystemIdentifier> 
+		<rep:footprint nodeNumber="5">
+			<rep:colRowList>0 0 485 0 485 915 0 915 0 0</rep:colRowList>
+			<rep:coordList>53.47 -1.97 53.25 -0.37 51.45 -1.09 51.67 -2.62 53.47 -1.97</rep:coordList>
+		</rep:footprint>
+		<rep:startTime>2010-07-31T10:33:15Z</rep:startTime>
+		<rep:endTime>2010-07-31T10:33:46Z</rep:endTime>
+	</rep:browse>
+</rep:browseReport>

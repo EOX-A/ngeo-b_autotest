@@ -15,6 +15,7 @@
                     <datasetId>ENVISAT_ASA_WS_ACS</datasetId>
                 </relatedDatasetIds>
                 <containsVerticalCurtains>false</containsVerticalCurtains>
+                <shortenIngestedInterval>0.0</shortenIngestedInterval>
                 <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
                 <highestMapLevel>4</highestMapLevel>
                 <lowestMapLevel>0</lowestMapLevel>
@@ -34,6 +35,7 @@
                     <datasetId>ENVISAT_ATS_TOA_1P</datasetId>
                 </relatedDatasetIds>
                 <containsVerticalCurtains>false</containsVerticalCurtains>
+                <shortenIngestedInterval>0.0</shortenIngestedInterval>
                 <grid>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</grid>
                 <highestMapLevel>4</highestMapLevel>
                 <lowestMapLevel>0</lowestMapLevel>
