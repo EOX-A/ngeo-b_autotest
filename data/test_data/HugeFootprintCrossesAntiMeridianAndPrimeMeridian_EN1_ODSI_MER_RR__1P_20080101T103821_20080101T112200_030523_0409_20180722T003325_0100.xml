@@ -2,7 +2,7 @@
 <rep:browseReport version="1.1" xsi:schemaLocation="http://ngeo.eo.esa.int/schema/browseReport http://ngeo.eo.esa.int/schema/browseReport/browseReport.xsd" xmlns:rep="http://ngeo.eo.esa.int/schema/browseReport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <rep:responsibleOrgName>SxCat</rep:responsibleOrgName>
 <rep:dateTime>2020-08-21T10:20:01Z</rep:dateTime>
-<rep:browseType>MER_FRS</rep:browseType>
+<rep:browseType>SAR</rep:browseType>
 <rep:browse>
 <rep:browseIdentifier>EN1_ODSI_MER_RR__1P_20080101T103821_20080101T112200_030523_0409_20180722T003325_0100</rep:browseIdentifier>
 <rep:fileName>HugeFootprintCrossesAntiMeridianAndPrimeMeridian_EN1_ODSI_MER_RR__1P_20080101T103821_20080101T112200_030523_0409_20180722T003325_0100_BID.PNG</rep:fileName>
