@@ -18,6 +18,7 @@
 /logs/ingest.log
 /logs/httpd_access.log
 /logs/httpd_error.log
+/logs/browsewatchd.log
 /results
 /data/failure/
 /data/optimized/
